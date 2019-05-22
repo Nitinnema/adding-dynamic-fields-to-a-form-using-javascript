@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ff</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+      
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog" style="min-width: 80%;">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                  </div>
+                  <div class="modal-body">
+                    <table id="show-elevation-area">
+                      <tr>
+                        <td class="col-xs-3"><label for="">Plan Name</label><input class="lot-elevations form-control" type="text" name="elevations[id][]" value="" required/></td>
+                        <td class="col-xs-3"><label for="">Elevation Image</label><input type="file" id="userfile-cover" name="userfile-cover" class="form-control" style="height:34px; padding-top:5px;" required/></td>
+                        <td class="col-xs-3"><label for="">Starting Price</label><input type="text" id="plat-price-input" class="form-control" required/></td>
+                        <td class="col-xs-3"><label for="">Specifications</label><input type="text" id="plat-address-input" class="form-control" required/></td>
+                        <td style=" padding-top: 22px;"><button type="button" style=" border-radius:50%;" id="add-elevation-btn1" class="btn btn-success btn-sm"><i class="fas fa-plus"></i></button></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="modal-footer" style="margin-top: -27px;">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Save changes</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+</body>
+
+<script type="text/javascript">
+  $('#add-elevation-btn1').on('click', function(){
+    alert("Hello");
+    $('#show-elevation-area').append('<tr><td class="col-xs-3"><label for="">Plan Name</label><input class="lot-elevations form-control" type="text" name="elevations[id][]" value="" required/></td><td class="col-xs-3"><label for="">Elevation Image</label><input type="file" id="userfile-cover" name="userfile-cover" class="form-control" style="height:34px; padding-top:5px;" required/></td><td class="col-xs-3"><label for="">Starting Price</label><input type="text" id="plat-price-input" class="form-control" required/></td><td class="col-xs-3"><label for="">Specifications</label><input type="text" id="plat-address-input" class="form-control" required/></td><td style=" padding-top: 22px;"><button type="button" style=" border-radius:50%;" id="remove-elevation-btn1" class="btn btn-success btn-sm"><i class="fas fa-minus"></i></button></td></tr>');
+  });
+
+  $('#show-elevation-area').on('click','#remove-elevation-btn1', function(e){
+    alert("Bye");
+    e.preventDefault();
+    $(this).closest('tr').remove();
+  });
+</script>
+</html>
